@@ -104,7 +104,7 @@
   >
 
 
-<template v-slot:item.temperature="{ item }">
+<template v-slot:[`item.temperature`]="{ item }">
       <v-chip
         :color="getColor(item.temperature)"
         dark
@@ -411,9 +411,9 @@ import { format, parseISO } from 'date-fns'
         this.close()
       },
       getColor (temperature) {
-        if (temperature > 35) return 'red'
-        else if (temperature > 25) return 'orange'
-        else return 'green'
+        if (temperature > 35) return 'orange'
+        else if (temperature > 25) return 'yellow'
+        else return 'blue'
       },
     }, computed: {
      
